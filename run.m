@@ -3,6 +3,7 @@ csv_files = dir(fullfile(data_folder,'*.csv'));
 csv_files = {csv_files.name}';
 
 k = 5;
+req_student_num = 100;
 results = zeros(size(csv_files, 1) * k, 5);
 
 for i = 1:numel(csv_files)
@@ -11,9 +12,13 @@ for i = 1:numel(csv_files)
     
     bnt = make_bkt_model;
     input_data =  get_data(file_name', bnt);
+    
     student_num = size(input_data, 1);
     fprintf('Student number: %d\n', student_num);
-
+    if student_num < req_student_num
+        continue
+    end
+    
     indices = crossvalind('Kfold', student_num, k);
     for r = 1:k
         test = (indices == r); train = ~test;
@@ -31,4 +36,4 @@ for i = 1:numel(csv_files)
     end
 end
 
-save('results.mat','results')
+save('results_0222_cat.mat','results')

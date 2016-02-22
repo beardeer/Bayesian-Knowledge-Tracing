@@ -8,7 +8,6 @@ i_opp = 3;
 % get all unique user id
 users = unique(data(:,i_user)); 
 
-
 N = size(bnet.dnodes*2,2);
 
 num_samples = size(users,1);
