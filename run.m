@@ -9,7 +9,7 @@ results = zeros(size(csv_files, 1) * k, 10);
 
 for i = 1:numel(csv_files)
     file_name = fullfile(data_folder,csv_files{i});
-    fprintf('Processing %s ... \n', file_name);
+    fprintf('Processing %d/%d: %s ... \n', i, numel(csv_files), file_name);
     % I just want to split a string ... and THIS IS REALLY UGLY!!
     splited = regexp(file_name, '\', 'split');
     splited = regexp(char(splited(1,2)), '\.', 'split');
