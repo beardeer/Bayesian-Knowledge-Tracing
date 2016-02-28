@@ -1,4 +1,4 @@
-function bnet = bkt_train(bnet, sampdata)
+function [bnet, f_prior, f_learn, f_forget, f_guess, f_slip] = bkt_train(bnet, sampdata)
 
 fprintf('Training ...\n');
 % filter out data points of the hidden variables
