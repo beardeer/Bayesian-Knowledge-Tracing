@@ -4,7 +4,7 @@ csv_files = {csv_files.name}';
 
 k = 5;
 N = 10;
-req_student_num = k;
+req_student_num = k*10;
 results = zeros(size(csv_files, 1) * k, 10);
 
 for i = 1:numel(csv_files)
@@ -46,4 +46,4 @@ for i = 1:numel(csv_files)
     end
 end
 
-save('results_0227.mat','results')
+save('results_0229.mat','results')
